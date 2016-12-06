@@ -1,15 +1,23 @@
-
+import java.util.Stack;
 
 public class RpnCalculator {
 	
 	
-	int accumulator = 0;
+	String accumulator = "";
+	Stack pinu = new Stack();
 
 	public int getAccumulator() {
-		return accumulator;
+		if(accumulator.isEmpty()){
+		return 0;
+		}
+		return Integer.parseInt(accumulator);
 	}
 
-	public void setAccumulator(int accumulator) {
+	public void setAccumulator(String accumulator) {
 		this.accumulator = accumulator;
+	}
+	
+	public void enter(int num){
+		pinu.push(num);
 	}
 }
