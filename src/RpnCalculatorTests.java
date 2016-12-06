@@ -25,4 +25,19 @@ public class RpnCalculatorTests {
 	public void calculatesSum(){
 		assertThat(calc.calculate("1 2 +"), is(3));
 	}
+	
+	@Test
+	public void calculatesMultiply(){
+		assertThat(calc.calculate("1 2 + 4 *"), is(12));
+	}
+	
+	@Test
+	public void calculatesMultiplyAndSum(){
+		assertThat(calc.calculate("4 3 + 2 1 + *"), is(21));
+	}
+	
+	@Test
+	public void calculatesMinus(){
+		assertThat(calc.calculate("1 2 + 4 -"), is(-1));
+	}
 }

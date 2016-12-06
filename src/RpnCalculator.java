@@ -20,6 +20,10 @@ public static void main(String[] args) {
 	public void setAccumulator(int accumulator) {
 		this.accumulator = accumulator;
 	}
+	
+	public int multiply(){
+		return pinu.pop() * pinu.pop();
+	}
 
 	public void enter(int num) {
 		pinu.push(num);
@@ -46,9 +50,11 @@ public static void main(String[] args) {
 			case "+":	
 				enter(plus());
 				break;
+			case "*":
+				enter(multiply());
+				break;
 			case "-":
-				
-
+				enter(minus());
 			default:
 				break;
 			}
@@ -58,6 +64,12 @@ public static void main(String[] args) {
 		return pinu.pop();
 	}
 
+	private int minus() {
+		// TODO Auto-generated method stub
+		int i = pinu.pop();
+		int j = pinu.pop();
+		return j-i;
+	}
 	private boolean isNumeric(Object object) {
 		// TODO Auto-generated method stub
 		return object.toString().matches("-?\\d+(\\.\\d+)?");
