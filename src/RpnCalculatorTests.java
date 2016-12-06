@@ -16,13 +16,13 @@ public class RpnCalculatorTests {
 	@Test
 	public void abilityToSetAccumulator() {
 
-		calc.setAccumulator("4");
+		calc.setAccumulator(4);
 
 		assertThat(calc.getAccumulator(), is(4));
 	}
 	
 	@Test
 	public void calculatesSum(){
-		calc.setAccumulator("12+");
+		assertThat(calc.calculate("1 2 +"), is(3));
 	}
 }
